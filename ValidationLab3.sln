@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationLab3", "ValidationLab3.csproj", "{ADA70427-F0AA-4D55-BE3C-39CDA4B3AE18}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA70427-F0AA-4D55-BE3C-39CDA4B3AE18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADA70427-F0AA-4D55-BE3C-39CDA4B3AE18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADA70427-F0AA-4D55-BE3C-39CDA4B3AE18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADA70427-F0AA-4D55-BE3C-39CDA4B3AE18}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0FEFD901-05BB-429D-BB00-91D435088DF3}
+	EndGlobalSection
+EndGlobal
