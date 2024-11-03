@@ -4,6 +4,7 @@
 }
 
 <form asp-action="Form" method="post">
+    <div asp-validation-summary="All"></div>
     <div>
         <label asp-for="Name">Your Name</label>
         <input asp-for="Name" />
