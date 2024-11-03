@@ -18,6 +18,23 @@ namespace ValidationLab3.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Form()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Form(Data data)
+        {
+            return View("Result", data);
+        }
+
+        public IActionResult Result(Data data )
+        {
+            return View(data);
+        }
+
         public IActionResult Privacy()
         {
             return View();
