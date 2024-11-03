@@ -4,29 +4,16 @@
 }
 
 <form asp-action="Form" method="post">
-    <div asp-validation-summary="All"></div>
-    <div>
-        <label asp-for="Name">Your Name</label>
-        <input asp-for="Name" />
-    </div>
+      @using (Html.BeginForm("Form", "Data", FormMethod.Post))
+        {
+            @Html.ValidationSummary(false, "", new {@class = "text-danger"})
+            <p>Your Name: @Html.TextBoxFor(a => a.Name)</p>
+            <p>Your Email: @Html.TextBoxFor(a => a.Email)</p>
+            <p>Subject: @Html.TextBoxFor(a => a.Subject)</p>
+            <p>Your Message: @Html.TextBoxFor(a => a.Message)</p>
+            <input type="submit" />
+        }
+</form> 
+ 
 
-    <div>
-        <label asp-for="Email">Your Email</label>
-        <input asp-for="Email" />
-    </div>
-
-    <div>
-        <label asp-for="Subject">Add Subject</label>
-        <input asp-for="Subject" />
-    </div>
-
-    <div>
-        <label asp-for="Message">Your Message</label>
-        <input asp-for="Message" />
-    </div>
-
-    <div>
-        <input type="submit" />
-    </div>
-</form>
 
