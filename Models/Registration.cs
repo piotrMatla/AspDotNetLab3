@@ -10,15 +10,6 @@ namespace ValidationLab3.Models
         [MinLength(2, ErrorMessage = "Name must have at least 2 characters")]
         public string FirstName { get; set; }
 
-
-        //        Nazwisko(wymagane, minimum 2 znaki)
-        //• Adres e-mail(wymagane, poprawny adres e-mail)
-        //• Hasło(wymagane, minimum 8 znaków, co najmniej jedna cyfra, jedna duża litera i jedna
-        //mała litera)
-        //• Potwierdzenie hasła(wymagane, musi być takie samo jak pole hasło)
-        //• Nr telefonu(odpowiedni typ)
-        //• Wiek(powyżej 10 lat do 80 lat)
-        //• Miasto(wybór z 5 propozycji)
         [Required(ErrorMessage = "Last name is required")]
         [MinLength(2, ErrorMessage = "Last name must have at least 2 characters")]
         public string LastName { get; set; }
@@ -33,7 +24,7 @@ namespace ValidationLab3.Models
         public string Password { get; set; }
 
         [Required(ErrorMessage = "Password confirmation is required")]
-        [Compare("Password", ErrorMessage = "passwords Provided must be the same")]
+        [Compare("Password", ErrorMessage = "Passwords provided must be the same")]
         public string PasswordConfirmation { get; set; }
 
         [Phone(ErrorMessage = "Niepoprawny format numeru telefonu")]
@@ -42,7 +33,8 @@ namespace ValidationLab3.Models
         [Range(10,80, ErrorMessage = $"Age must be between 10 and 80 years.")]
         public int Age { get; set; }
 
-        public string City { get; set; }
+        [Required]
+        public Categories City { get; set; }
 
         public string Category { get; set; }
         public enum Categories { Village = 1, Town = 2, SmallCity = 3, City = 4, Metropolis = 5 }
