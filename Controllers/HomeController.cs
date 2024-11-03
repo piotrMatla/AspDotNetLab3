@@ -27,7 +27,11 @@ namespace ValidationLab3.Controllers
         [HttpPost]
         public IActionResult Form(Data data)
         {
-            return View("Result", data);
+            if(ModelState.IsValid) 
+            {
+                return View("Result", data);
+            }
+            else return View();
         }
 
         public IActionResult Result(Data data )
