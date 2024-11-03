@@ -39,9 +39,20 @@ namespace ValidationLab3.Controllers
             return View(data);
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult RegistrationForm()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult RegistrationForm(Registration data)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("RegistrationResult", data);
+            }
+            else return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

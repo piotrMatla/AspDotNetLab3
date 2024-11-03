@@ -1,0 +1,26 @@
+﻿@model ValidationLab3.Models.Registration
+@{
+    ViewData["Title"] = "RegistrationForm";
+}
+
+<h1>RegistrationForm</h1>
+
+<form asp-action="RegistrationForm" method="post">
+    @using (Html.BeginForm("RegistrationForm", "Registration", FormMethod.Post))
+    {
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        <p>Your first name: @Html.TextBoxFor(a => a.FirstName)</p>
+        <p>Your last name: @Html.TextBoxFor(a => a.LastName)</p>
+        <p>Your Email: @Html.TextBoxFor(a => a.Email)</p>
+        <p>Password: @Html.PasswordFor(a => a.Password)</p>
+        <p>Confim your password: @Html.PasswordFor(a => a.PasswordConfirmation)</p>
+        <p>Mobile Number: @Html.TextBoxFor(a => a.MobileNumber)</p>
+        <p>Your Age: @Html.TextBoxFor(a => a.Age)</p>
+        <p>Your city:
+            <select asp-for="Category"
+                asp-items="Html.GetEnumSelectList<Registration.Categories>()">
+            </select>
+        </p>
+        <input type="submit" />
+    }
+</form> 
