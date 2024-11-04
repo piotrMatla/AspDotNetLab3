@@ -3,25 +3,75 @@
     ViewData["Title"] = "RegistrationForm";
 }
 
-<h1>RegistrationForm</h1>
 
-<form asp-action="RegistrationForm" method="post">
-    @using (Html.BeginForm("RegistrationForm", "Registration", FormMethod.Post))
-    {
-        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
-        <p>Your first name: @Html.TextBoxFor(a => a.FirstName)</p>
-        <p>Your last name: @Html.TextBoxFor(a => a.LastName)</p>
-        <p>Your Email: @Html.TextBoxFor(a => a.Email)</p>
-        <p>Password: @Html.PasswordFor(a => a.Password)</p>
-        <p>Confim your password: @Html.PasswordFor(a => a.PasswordConfirmation)</p>
-        <p>Mobile Number: @Html.TextBoxFor(a => a.MobileNumber)</p>
-        <p>Your Age: @Html.TextBoxFor(a => a.Age)</p>
-        <p>Your city:
-            <select asp-for="Category"
-                asp-items="Html.GetEnumSelectList<Registration.Categories>()">
-            </select>
-        </p>
-        <input class="btn btn-success" type="submit" />
-        <input class="btn btn-danger"type="reset" />
-    }
-</form> 
+<div class="container d-flex justify-content-center card border-1 p-1 mb-3" style="max-width: 25rem;">
+    <div class="card-header">
+        <h1 class="card-title" >RegistrationForm</h1>
+
+    </div>
+    <div class="card-body">
+        <form asp-action="RegistrationForm" method="post">
+            @using (Html.BeginForm("RegistrationForm", "Registration", FormMethod.Post))
+            {
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    <label for="FirstName">First Name:</label>
+                    @Html.TextBoxFor(a => a.FirstName, new { @class = "form-control", @id = "FirstName" })
+                    @Html.ValidationMessageFor(a => a.FirstName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="LastName">Last Name:</label>
+                    @Html.TextBoxFor(a => a.LastName, new { @class = "form-control", @id = "LastName" })
+                    @Html.ValidationMessageFor(a => a.LastName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Email:</label>
+                    @Html.TextBoxFor(a => a.Email, new { @class = "form-control", @id = "Email" })
+                    @Html.ValidationMessageFor(a => a.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="Password">Password:</label>
+                    @Html.PasswordFor(a => a.Password, new { @class = "form-control", @id = "Password" })
+                    @Html.ValidationMessageFor(a => a.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="PasswordConfirmation">Confirm password:</label>
+                    @Html.PasswordFor(a => a.PasswordConfirmation, new { @class = "form-control", @id = "PasswordConfirmation" })
+                    @Html.ValidationMessageFor(a => a.PasswordConfirmation, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="MobileNumber">Mobile number:</label>
+                    @Html.TextBoxFor(a => a.MobileNumber, new { @class = "form-control", @id = "MobileNumber" })
+                    @Html.ValidationMessageFor(a => a.MobileNumber, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="Age">Age:</label>
+                    @Html.TextBoxFor(a => a.Age, new { @class = "form-control", @id = "Age" })
+                    @Html.ValidationMessageFor(a => a.Age, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="City">City size:</label>
+                    @Html.DropDownListFor(a => a.City, Html.GetEnumSelectList<ValidationLab3.Models.Registration.Categories>(), "Choose...", new { @class = "form-control", @id = "City" })
+                    @Html.ValidationMessageFor(a => a.City, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Sign up</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                </div>
+            }
+
+        </form>
+    </div>
+    
+</div>
+
+<script src="~/js/site.js"></script>
